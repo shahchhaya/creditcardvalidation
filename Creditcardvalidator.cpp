@@ -1,17 +1,18 @@
 // creditcard validation project 
+//This program uses LUHN algorithm to validate cc Number.
 
 #include<iostream>
 #include<string>
 using namespace std;
-bool isValidCredit(  string & Creditcardnumber){
+bool isValidCredit( const string & Creditcardnumber){
     int length=Creditcardnumber.length();
     int total=0;
-    int parity=length%2;                //to check even or odd
+    int parity=length%2;                           //to check even or odd
     for (int i = 0; i < length; i++)
     {
         int digit=Creditcardnumber[i]-'0';
 
-        //double every even places number 
+      //double every even places number 
         if(i%2==parity){                               //2 4 5 7 8
             digit*=2;                                    // *   *2  
             if(digit>9){                                        //16-9    
